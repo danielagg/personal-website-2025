@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Main.astro";
 import Button from "../components/Button.astro";
+import Experience from "../components/Experience.astro";
 ---
 
 <Layout>
@@ -65,5 +66,53 @@ import Button from "../components/Button.astro";
         developer is to deliver a working product, not the blueprint of it.
       </p>
     </section>
+  </section>
+
+  <hr class="my-6 lg:mt-24 lg:mb-12 opacity-30" />
+
+  <section>
+    <h3 class="pb-6">Experience</h3>
+
+    <div class="flex flex-col gap-12">
+      <Experience
+        title="Senior Full Stack Developer"
+        employer="iPractice"
+        employerUrl="https://ipractice.com"
+        location="Amsterdam, Netherlands"
+        startDate={new Date("2023-12-01")}
+        isCurrent
+        description="Currently working on internal applications for psychologists, allowing them to manage their patients, incoming referrals, invoices and appointment scheduling. As a full stack developer, I am responsible both for back-, and frontends (.NET 8, React, Astro) as well as devops (Azure Pipelines) and infrastructure management (Azure resources)."
+      />
+
+      <Experience
+        title="Senior Full Stack Developer"
+        employer="Apiumhub"
+        employerUrl="https://apiumhub.com"
+        location="A Coruña, Spain"
+        startDate={new Date("2021-04-01")}
+        endDate={new Date("2023-11-01")}
+        description="As a full stack developer, I was working on a React front-, and an ASP.NET Core Web API backend for a B2B application, as well as taking care of the project's DevOps duties and infrastructure on Azure."
+      />
+
+      <Experience
+        title="Full Stack Developer"
+        employer="Glownexus"
+        employerUrl="https://www.glownexus.com/"
+        location="Budapest, Hungary"
+        startDate={new Date("2018-09-01")}
+        endDate={new Date("2021-04-01")}
+        description="I've worked on diverse projects, from small-scale serverless apps running on Azure Functions, to enterprise monolith solutions. My main responsibilities were around .NET backends."
+      />
+
+      <Experience
+        title="Junior/Medior .NET Developer"
+        employer="Atos Consulting"
+        employerUrl="https://atos.net/en/"
+        location="Budapest, Hungary"
+        startDate={new Date("2016-05-01")}
+        endDate={new Date("2018-09-01")}
+        description="I was working on various, brown-field backends developed in the .NET ecosystem (with strong emphasis on SQL)."
+      />
+    </div>
   </section>
 </Layout>

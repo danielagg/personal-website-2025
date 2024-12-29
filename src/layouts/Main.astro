@@ -11,7 +11,9 @@ import Sidebar from "../components/Sidebar.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="bg-background text-foreground">
-    <main class="block lg:flex w-full lg:w-3/4 py-6 lg:py-32 px-6 lg:px-12">
+    <main
+      class="block lg:flex w-full lg:w-3/4 py-6 lg:pt-32 lg:pb-20 px-6 lg:px-12"
+    >
       <Sidebar />
       <section class="w-full lg:w-2/3 p-4">
         <slot />

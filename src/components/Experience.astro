@@ -1,0 +1,52 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  location: string;
+  employer: string;
+  employerUrl: string;
+  startDate: Date;
+  endDate?: Date;
+  isCurrent?: boolean;
+}
+
+const {
+  title,
+  description,
+  location,
+  employer,
+  employerUrl,
+  startDate,
+  endDate,
+  isCurrent,
+} = Astro.props;
+---
+
+<section>
+  <h3 class="text-2xl font-bold m-0">
+    {title} @ <a
+      class="text-primary cursor-pointer hover:underline"
+      href={employerUrl}
+      target="_blank">{employer}</a
+    >
+  </h3>
+  <p class="text-base text-accent">
+    {
+      startDate.toLocaleDateString("en-US", {
+        month: "short",
+        year: "numeric",
+      })
+    }
+    {" - "}
+    {
+      isCurrent
+        ? "Present"
+        : endDate!.toLocaleDateString("en-US", {
+            month: "short",
+            year: "numeric",
+          })
+    } | {location}
+  </p>
+
+  <p class="text-base text-accent pt-3">{description}</p>
+</section>
