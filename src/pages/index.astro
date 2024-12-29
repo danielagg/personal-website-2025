@@ -1,89 +1,69 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Sidebar from "../components/Sidebar.astro";
+import Layout from "../layouts/Main.astro";
 import Button from "../components/Button.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="bg-background text-foreground">
-    <main class="block lg:flex w-full lg:w-3/4 py-6 lg:py-32 px-6 lg:px-12">
-      <Sidebar />
-      <section class="w-full lg:w-2/3 p-4">
-        <section>
-          <h1>Hi there!</h1>
-          <p>
-            I'm Daniel, a Senior Full Stack Developer based in Amsterdam,
-            proudly working at <a
-              class="cursor-pointer text-primary hover:underline"
-              href="https://ipractice.com/"
-              target="_blank">iPractice</a
-            >, a company in the Netherlands focused on making mental health care
-            accessible to everyone.
-          </p>
-          <p class="pt-8 text-base text-accent">
-            I specialize in architecting, designing and developing scalable
-            software solutions on Microsoft Azure and AWS platforms.
-          </p>
-          <p class="pt-8 text-base text-accent">
-            On the backend, I'm experienced in .NET, Go, Python and SQL. On the
-            frontend, I'm experienced in TypeScript, JavaScript (React, Astro,
-            Solid, HTMX). Most recently, I've been working on React Native with
-            Expo.
-          </p>
-        </section>
+<Layout>
+  <section>
+    <h1>Hi there!</h1>
+    <p>
+      I'm Daniel, a Senior Full Stack Developer based in Amsterdam, proudly
+      working at <a
+        class="cursor-pointer text-primary hover:underline"
+        href="https://ipractice.com/"
+        target="_blank">iPractice</a
+      >, a company in the Netherlands focused on making mental health care
+      accessible to everyone.
+    </p>
+    <p class="pt-8 text-base text-accent">
+      I specialize in architecting, designing and developing scalable software
+      solutions on Microsoft Azure and AWS platforms.
+    </p>
+    <p class="pt-8 text-base text-accent">
+      On the backend, I'm experienced in .NET, Go, Python and SQL. On the
+      frontend, I'm experienced in TypeScript, JavaScript (React, Astro, Solid,
+      HTMX). Most recently, I've been working on React Native with Expo.
+    </p>
+  </section>
 
-        <hr class="my-6 lg:my-20 opacity-30" />
+  <hr class="my-6 lg:my-20 opacity-30" />
 
-        <section
-          class="text-base text-accent flex flex-col lg:grid auto-cols-auto grid-flow-col gap-8"
-        >
-          <div class="flex flex-col items-center w-full">
-            <img
-              src="profile.png"
-              class="min-w-[150px] w-[10vw]"
-              alt="Profile picture of Daniel Agg"
-            />
-            <div class="mt-6 w-fit lg:w-full">
-              <Button
-                label="Download my CV"
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/daniel-agg-940000100/"
-                  )}
-              />
-            </div>
-          </div>
-          <section class="flex flex-col gap-4">
-            <p>
-              I advocate for modular monoliths with vertical slicing, Domain
-              Driven Design, true CI/CD with Trunk Based Development and feature
-              flags, fitness functions, procedural code and compartmentalizing
-              volatile parts of our applications.
-            </p>
-            <p>
-              I'm passionate about researching adaptable software architectures,
-              enabling applications to gracefully evolve over time: I came to
-              realize the value of an adaptable architecture, which can
-              facilitate the ever-changing landscape of business needs and keep
-              the tempo of development rapid, without accumulating technical
-              debt.
-            </p>
-            <p>
-              While I love geeking out over architectures, I like to think that
-              I'm also pragmatic, always keeping in mind that my goal as a
-              software developer is to deliver a working product, not the
-              blueprint of it.
-            </p>
-          </section>
-        </section>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+  <section
+    class="text-base text-accent flex flex-col lg:grid auto-cols-auto grid-flow-col gap-8"
+  >
+    <div class="flex flex-col items-center w-full">
+      <img
+        src="profile.png"
+        class="min-w-[150px] w-[10vw]"
+        alt="Profile picture of Daniel Agg"
+      />
+      <div class="mt-6 w-fit lg:w-full">
+        <Button
+          label="Download my CV"
+          onClick={() =>
+            window.open("https://www.linkedin.com/in/daniel-agg-940000100/")}
+        />
+      </div>
+    </div>
+    <section class="flex flex-col gap-4">
+      <p>
+        I advocate for modular monoliths with vertical slicing, Domain Driven
+        Design, true CI/CD with Trunk Based Development and feature flags,
+        fitness functions, procedural code and compartmentalizing volatile parts
+        of our applications.
+      </p>
+      <p>
+        I'm passionate about researching adaptable software architectures,
+        enabling applications to gracefully evolve over time: I came to realize
+        the value of an adaptable architecture, which can facilitate the
+        ever-changing landscape of business needs and keep the tempo of
+        development rapid, without accumulating technical debt.
+      </p>
+      <p>
+        While I love geeking out over architectures, I like to think that I'm
+        also pragmatic, always keeping in mind that my goal as a software
+        developer is to deliver a working product, not the blueprint of it.
+      </p>
+    </section>
+  </section>
+</Layout>
