@@ -11,12 +11,12 @@ const philosophicalNuggets: Nugget[] = [
   {
     title: "Recognize being a victim of your own experience",
     description:
-      "Each of our experiences are different, unique and valid (though earnt at different rates). My experience is 179° different than a FAANG engineer's from Silicon Valley. Both are valid, but the context differs. Thus, our opinions, ideas and choices are going to be different. It's okay and important to recognize these differences when conversing. Expose yourself to these differences, understand them, even if they are not applicable to your path - you likely will still pick something up to bring along with you.",
+      "Each of our experiences are different, unique and valid (though earned at different rates). My experience is 179° different than a FAANG engineer's from Silicon Valley. Both are valid, but the context differs. Thus, our opinions, ideas and choices are going to be different. It's okay and important to recognize these differences when conversing. Expose yourself to these differences, understand them, even if they are not applicable to your path - you likely will still pick something up to bring along with you.",
   },
   {
     title: "Engage upon different opinions",
     description:
-      "Almost everyone recommends reading Uncle Bob's Clean Code. However, reputation != dogma. Consume advice critically, be able to disagree and form your own opinions - avoid jumping on a single bandwagon for the whole ride. For Uncle Bob's case, also check [Casey Muratori interview](https://github.com/unclebob/cmuratori-discussion/blob/main/cleancodeqa.md), debating clean code's concepts. Agree or disagree, do seek different perspectives, recognize that opinions are not facts and everything can and should be challenged from time to time.",
+      "Almost everyone recommends reading Uncle Bob's Clean Code. However, reputation != dogma. Consume advice critically, be able to disagree and form your own opinions - avoid jumping on a single bandwagon for the whole ride. For Uncle Bob's case, also check out [Casey Muratori interview](https://github.com/unclebob/cmuratori-discussion/blob/main/cleancodeqa.md), debating clean code's concepts. Agree or disagree, do seek different perspectives, recognize that opinions are not facts and everything can and should be challenged from time to time.",
   },
   {
     title: "Product Mindset > Engineering-for-Engineering's-Sake",
@@ -31,7 +31,7 @@ const philosophicalNuggets: Nugget[] = [
   {
     title: "Yesterday's pride is today's problem",
     description:
-      "(No idea who said it as in the title, definitely not me, it's too good) We learn and learn - when looking back at code I wrote a year, 2 or 5 ago, its embarassing. We will always notice opportunities, patterns, techniques at hindsight, at which our younger selves were ignorant about. This should never change - when it does, it means you've stopped improving.",
+      "(No idea who said it as in the title, definitely not me, it's too good) We learn and learn - when looking back at code I wrote a year, 2 or 5 ago, its embarassing. We will always notice opportunities, patterns, techniques at hindsight, which our younger selves were ignorant about. This should never change (when it does, it means we've stopped improving).",
   },
 ];
 
@@ -39,37 +39,37 @@ const technicalNuggets: Nugget[] = [
   {
     title: "Modular monoliths > microservices",
     description:
-      "Microservices are often an overkill. A well architected monolith is an excellent compromise between modularity and scalability.",
+      "Microservices are often an overkill. A well architected monolith is an excellent compromise.",
   },
   {
     title: "ETC > DRY/KISS/YAGNI/SOLID/...",
     description:
-      "ETC, as in 'Easy To Change'. DRY, KISS, YAGNI, SOLID all have the same underlying idea to some extent: to have the codebase easily changeable in the future, be it for a new features or bug fixes.",
+      "ETC, as in 'Easy To Change'. DRY, KISS, YAGNI, SOLID all have the same underlying idea to some extent: to have the codebase easily changeable in the future, be it for new features or bug fixes.",
   },
   {
     title: "Encapsulate volatility",
     description:
-      "I love Domain Driven Design, but also think it's good to be pragmatic: if you know a unit of code is going to change, encapsulate that.",
+      "I love Domain Driven Design, but I've been convinced that it's a good idea to encapsulate a unit of code which you know is going to change, even if it spans across contexts. DDD is flexible and modelling is opinion based - have common sense, be sensible. Picked up from https://rightingsoftware.org/",
   },
   {
-    title: "Feature flags > git branches",
+    title: "Feature flags > git branches (Deploy != Release)",
     description:
-      "Trunk based development with feature flags is the way to iterate quickly. Do not write a feature-flag-provider yourself, use a 3rd party to be able to soft-release features to users in production & test there.",
+      "Trunk based development with feature flags is the way to iterate quickly. Do not write a feature-flag-provider yourself, use a SaaS to be able to soft-release features to users in production. Keep your feature brances down to a minimum. Deploy often to prod, release via toggling feature flags.",
   },
   {
     title: "Keep the number of environments to a minimum",
     description:
-      "Ties to the previous point. Do not test in staging/UAT, production is always going to be oh-so-different and bite you. Test on prod with feature flags & lose the other environments. While the naive idea to test on staging is sensible, it rarely works for stuff that are complex enough to require thorough testing.",
+      "Ties to the previous point. Do not test in staging/UAT, production is always going to be oh-so-different and bite you. Test on prod with feature flags & lose the other environments. While the idea to test on staging is sensible, it rarely works for stuff that are complex enough to require thorough testing. You can enable a feature flag in prod to a power-user or two, test like that - it's going to be more reliable.",
   },
   {
     title: "Locality of Behavior > Abstractions",
     description:
-      "This has been said a lot by now. Reduce the cognitive load, by keeping cohesion high and coupling low. Long functions and deep modules are okay. Keep the interface shallow & short, have the complexity encapsulated locally.",
+      "This has been said a lot by now. Reduce the cognitive load, by keeping cohesion high and coupling low. Long functions and deep modules are okay. Keep the interface shallow & short, have the complexity encapsulated locally as an implementation-detail.",
   },
   {
-    title: "Use Case Coverage > Code Coverage for tests",
+    title: "Use-Case-Coverage > Code-Coverage for tests",
     description:
-      "It's bullshit to aim for 90-100% test coverage if we're testing use cases that only the test cares about. Look at the bigger picture & have common sense: are we scared to do a production deploy, because we are unsure about our change? Congratulations, there's your indicator what needs tests.",
+      "It's illogical to aim for 90-100% test coverage if we're testing use cases that only the test cares about. Look at the bigger picture & have common sense: are we scared to do a production deploy, because we are unsure about our change? Congratulations, there's your indicator what needs tests.",
   },
 ];
 ---
@@ -90,15 +90,15 @@ const technicalNuggets: Nugget[] = [
   </p>
 
   <p class="text-base text-accent pt-4">
-    Before reading the nuggets below, please understand from where I'm coming
-    from, and thus the context of these bits of opinions: our field is so large,
+    Before reading the nuggets below, please understand the perspective I'm
+    coming from and the context behind these opinions. Our field is so large,
     with so many different engineering roles and problem spaces. While my
-    opinions might resonate with some developers, it probably won't with others.
-    I work on apps. I'm not too involved with deep, under the hood problems, eg.
-    optimizing the FPS on a videoplayer, however I do solve issues like
-    parameter sniffing performance problems in SQL. I also work closely with
-    end-users, business owners, product managers and other stakeholders in
-    'agile' teams.
+    opinions might resonate with some devs, it probably won't with others. To
+    paint a picture: I work on apps, mostly on backends. While I'm not too
+    involved with deep, 'purely technical' under the hood problems (eg.
+    optimizing the FPS on a videoplayer), I do solve issues like parameter
+    sniffing performance problems in SQL, wiring up authentication between
+    services, attending event storming sessions and so on.
   </p>
 
   <hr class="pt-12 mt-12 opacity-30" />
