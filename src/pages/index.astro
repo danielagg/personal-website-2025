@@ -1,50 +1,81 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Sidebar from "../components/Sidebar.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-background text-foreground">
+    <main class="flex w-3/4 py-32 px-12">
+      <Sidebar />
+      <section class="w-2/3 p-4">
+        <section>
+          <h1>Hi there!</h1>
+          <p>
+            I'm Daniel, a Senior Full Stack Developer based in Amsterdam,
+            proudly working at <a
+              class="text-accent cursor-pointer hover:underline"
+              href="https://ipractice.com/"
+              target="_blank">iPractice</a
+            >, a company in the Netherlands focused on making mental health care
+            accessible to everyone, using a <a
+              class="text-accent cursor-pointer hover:underline"
+              href="https://ipractice.com/psychologist/blended-care/"
+              target="_blank">blended-care approach</a
+            >.
+          </p>
+          <p class="pt-8 text-base">
+            I specialize in architecting, designing and developing scalable
+            software solutions on Microsoft Azure and AWS platforms.
+          </p>
+          <p class="pt-8 text-base">
+            On the backend, I'm experienced in .NET, Go, Python and SQL. On the
+            frontend, I'm experienced in TypeScript, JavaScript (React, Astro,
+            Solid, HTMX). Most recently, I've been working on React Native with
+            Expo.
+          </p>
+        </section>
+
+        <hr class="mt-20 mb-20 opacity-30" />
+
+        <section
+          class="text-base text-accent grid auto-cols-auto grid-flow-col gap-8"
+        >
+          <img
+            src="profile.png"
+            class="min-w-[150px] w-[10vw]"
+            alt="Profile picture of Daniel Agg"
+          />
+          <section class="flex flex-col gap-4">
+            <p>
+              I advocate for modular monoliths with vertical slicing, Domain
+              Driven Design, true CI/CD with Trunk Based Development and feature
+              flags, fitness functions, procedural code and compartmentalizing
+              volatile parts of our applications.
+            </p>
+            <p>
+              I'm passionate about researching adaptable software architectures,
+              enabling applications to gracefully evolve over time: I came to
+              realize the value of an adaptable architecture, which can
+              facilitate the ever-changing landscape of business needs and keep
+              the tempo of development rapid, without accumulating technical
+              debt.
+            </p>
+            <p>
+              While I love geeking out over architectures, I like to think that
+              I'm also pragmatic, always keeping in mind that my goal as a
+              software developer is to deliver a working product, not the
+              blueprint of it.
+            </p>
+          </section>
+        </section>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
