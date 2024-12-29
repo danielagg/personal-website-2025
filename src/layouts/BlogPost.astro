@@ -1,7 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 
@@ -10,9 +11,10 @@ type Props = CollectionEntry<"blog">["data"];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
       main {
         width: calc(100% - 2em);
@@ -53,36 +55,39 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       }
     </style>
   </head>
-
-  <body>
-    <Header />
-    <main>
-      <article>
-        <div class="hero-image">
-          {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
-        </div>
-        <div class="prose">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1>{title}</h1>
-            <hr />
+  <body class="bg-background text-foreground">
+    <main
+      class="block lg:flex w-full lg:w-3/4 py-6 lg:pt-32 lg:pb-20 px-6 lg:px-12"
+    >
+      <Sidebar />
+      <section class="w-full lg:w-2/3 p-4">
+        <article>
+          <div class="hero-image">
+            {
+              heroImage && (
+                <img width={1020} height={510} src={heroImage} alt="" />
+              )
+            }
           </div>
-          <slot />
-        </div>
-      </article>
+          <div class="prose">
+            <div class="title">
+              <div class="date">
+                <FormattedDate date={pubDate} />
+                {
+                  updatedDate && (
+                    <div class="last-updated-on">
+                      Last updated on <FormattedDate date={updatedDate} />
+                    </div>
+                  )
+                }
+              </div>
+              <h1>{title}</h1>
+              <hr />
+            </div>
+            <slot />
+          </div>
+        </article>
+      </section>
     </main>
     <Footer />
   </body>
