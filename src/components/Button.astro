@@ -1,0 +1,15 @@
+---
+interface Props {
+  label: string;
+  onClick: () => void;
+}
+
+const { label, onClick } = Astro.props;
+---
+
+<button
+  class="w-full border-primary/30 border bg-primary/10 hover:bg-primary/30 text-primary px-4 py-2 rounded-full text-base"
+  onclick={`(${onClick.toString()})()`}
+>
+  {label}
+</button>

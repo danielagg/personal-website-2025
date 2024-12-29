@@ -1,0 +1,22 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Sidebar from "../components/Sidebar.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-background text-foreground">
+    <main class="block lg:flex w-full lg:w-3/4 py-6 lg:py-32 px-6 lg:px-12">
+      <Sidebar />
+      <section class="w-full lg:w-2/3 p-4">
+        <slot />
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
