@@ -11,9 +11,9 @@ import Sidebar from "../components/Sidebar.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="bg-background text-foreground">
-    <main class="flex w-3/4 py-32 px-12">
+    <main class="block lg:flex w-full lg:w-3/4 py-6 lg:py-32 px-6 lg:px-12">
       <Sidebar />
-      <section class="w-2/3 p-4">
+      <section class="w-full lg:w-2/3 p-4">
         <section>
           <h1>Hi there!</h1>
           <p>
@@ -41,10 +41,10 @@ import Sidebar from "../components/Sidebar.astro";
           </p>
         </section>
 
-        <hr class="mt-20 mb-20 opacity-30" />
+        <hr class="my-6 lg:my-20 opacity-30" />
 
         <section
-          class="text-base text-accent grid auto-cols-auto grid-flow-col gap-8"
+          class="text-base text-accent flex flex-col lg:grid auto-cols-auto grid-flow-col gap-8"
         >
           <img
             src="profile.png"
