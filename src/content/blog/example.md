@@ -1,8 +1,9 @@
 ---
-title: "Markdown Style Guide"
+title: "Example"
 description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate et cumque deserunt beatae amet vitae autem facere aut exercitationem praesentium distinctio asperiores nisi quos suscipit accusantium, excepturi ea temporibus eveniet omnis similique molestiae maiores quia? Eius delectus libero ducimus voluptas, quaerat consequuntur veniam vitae dicta nam odit illum obcaecati molestiae rerum, sint aliquid praesentium consequatur, impedit numquam facilis! Corrupti, porro natus! Recusandae quis soluta voluptas quos facere enim exercitationem repellendus non quia eaque, hic ipsa et sint odit aliquid ipsam voluptates harum cum, iusto temporibus!"
-pubDate: "Jun 19 2024"
+pubDate: "Dec 1 2024"
 heroImage: "/blog-placeholder-1.jpg"
+isDraft: true
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
