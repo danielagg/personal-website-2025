@@ -34,21 +34,29 @@ const { title, pubDate, updatedDate, heroImage } = Astro.props;
           </div>
           <div>
             <div class="py-6">
+              <a
+                href="/blog"
+                class="text-primary hover:underline cursor-pointer">↩ Back</a
+              >
+            </div>
+
+            <h1 class="font-bold">{title}</h1>
+            <section class="-mt-4 pb-6">
               <FormattedDate date={pubDate} />
               {
-                updatedDate && (
-                  <div class="text-accent">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
+                pubDate && (
+                  <span class="text-accent">
+                    - last updated on <FormattedDate date={pubDate} />
+                  </span>
                 )
               }
-              <h1 class="font-bold">{title}</h1>
-            </div>
-            <slot />
+            </section>
           </div>
+          <slot />
         </article>
       </section>
     </main>
+
     <Footer />
   </body>
 </html>
