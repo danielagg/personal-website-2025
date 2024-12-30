@@ -16,4 +16,15 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const experienceNugget = defineCollection({
+  loader: glob({
+    base: "./src/content/experience-nuggets",
+    pattern: "**/*.{md,mdx}",
+  }),
+  schema: z.object({
+    title: z.string(),
+    type: z.enum(["philosophical", "technical"]),
+  }),
+});
+
+export const collections = { blog, experienceNugget };
