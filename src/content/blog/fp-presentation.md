@@ -1,7 +1,7 @@
 ---
 title: "Slides from my talk on Functional Programming"
 description: "During the summer of 2024, I gave a talk on Functional Programming to my company's engineering team, comparing Gleam and C#. This post contains the slides from the presentation."
-pubDate: "June 6 2024"
+pubDate: "Dec 30 2024"
 isDraft: false
 ---
 

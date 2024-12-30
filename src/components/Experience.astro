@@ -1,7 +1,7 @@
 ---
 interface Props {
   title: string;
-  description: string;
+  description?: string;
   location: string;
   employer: string;
   employerUrl: string;
@@ -50,5 +50,5 @@ const {
     } | {location}
   </p>
 
-  <p class="text-base text-accent pt-3">{description}</p>
+  {description && <p class="text-base text-accent pt-3">{description}</p>}
 </section>
