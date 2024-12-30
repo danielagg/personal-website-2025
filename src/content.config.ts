@@ -16,15 +16,28 @@ const blog = defineCollection({
   }),
 });
 
-const experienceNugget = defineCollection({
+const philosophicalExperienceNugget = defineCollection({
   loader: glob({
-    base: "./src/content/experience-nuggets",
+    base: "./src/content/experience-nuggets/philosophical",
     pattern: "**/*.{md,mdx}",
   }),
   schema: z.object({
     title: z.string(),
-    type: z.enum(["philosophical", "technical"]),
   }),
 });
 
-export const collections = { blog, experienceNugget };
+const technicalExperienceNugget = defineCollection({
+  loader: glob({
+    base: "./src/content/experience-nuggets/technical",
+    pattern: "**/*.{md,mdx}",
+  }),
+  schema: z.object({
+    title: z.string(),
+  }),
+});
+
+export const collections = {
+  blog,
+  philosophicalExperienceNugget,
+  technicalExperienceNugget,
+};

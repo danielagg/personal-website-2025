@@ -3,15 +3,10 @@ import ExperienceNugget from "../components/ExperienceNugget.astro";
 import Layout from "../layouts/Main.astro";
 import { getCollection } from "astro:content";
 
-const experienceNuggets = await getCollection("experienceNugget");
-
-const philosophicalNuggets = experienceNuggets.filter(
-  (nugget) => nugget.data.type === "philosophical"
+const philosophicalNuggets = await getCollection(
+  "philosophicalExperienceNugget"
 );
-
-const technicalNuggets = experienceNuggets.filter(
-  (nugget) => nugget.data.type === "technical"
-);
+const technicalNuggets = await getCollection("technicalExperienceNugget");
 ---
 
 <Layout>

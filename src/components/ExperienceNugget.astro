@@ -4,7 +4,9 @@ import { render } from "astro:content";
 
 interface Props {
   number: number;
-  nugget: CollectionEntry<"experienceNugget">;
+  nugget:
+    | CollectionEntry<"technicalExperienceNugget">
+    | CollectionEntry<"philosophicalExperienceNugget">;
 }
 
 const { number, nugget } = Astro.props;
