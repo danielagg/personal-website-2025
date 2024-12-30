@@ -75,6 +75,11 @@ b {
   text-decoration: underline;
 }
 
+.prose li {
+  list-style: inside;
+  list-style-type: circle;
+}
+
 textarea {
   width: 100%;
   font-size: 16px;

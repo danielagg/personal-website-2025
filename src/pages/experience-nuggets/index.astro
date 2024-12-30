@@ -2,38 +2,33 @@
 import ExperienceNugget from "../../components/ExperienceNugget.astro";
 import Layout from "../../layouts/Main.astro";
 import { getCollection } from "astro:content";
+import { sortByFilePath } from "../../utils/sortByFilePath";
 
 const philosophicalNuggets = await getCollection(
   "philosophicalExperienceNugget"
 );
+const sortedPhilosophicalNuggets = philosophicalNuggets.sort((a, b) =>
+  sortByFilePath(a.filePath!, b.filePath!)
+);
+
 const technicalNuggets = await getCollection("technicalExperienceNugget");
+const sortedTechnicalNuggets = technicalNuggets.sort((a, b) =>
+  sortByFilePath(a.filePath!, b.filePath!)
+);
 ---
 
 <Layout>
-  <h1>Experience nuggets</h1>
-  <p>
-    These are bits of experience that I've picked up over the years. They are
-    not revolutionary, but they are a good reminder of what I've learned, so
-    far.
+  <h1>Experience Nuggets</h1>
+  <p class="text-accent">
+    These are bits and pieces I've picked up over the years. They are not
+    revolutionary, but they are a good reminder of what I've learned, so far.
   </p>
-  <p>
+  <p class="text-accent">
     Unapologetically inspired by <a
       class="text-primary cursor-pointer hover:underline"
       href="https://grugbrain.dev"
       target="_blank">The Grug Brained Developer</a
     >. Continuously updated.
-  </p>
-
-  <p class="text-base text-accent pt-4">
-    Before reading the nuggets below, please understand the perspective I'm
-    coming from and the context behind these opinions. Our field is so large,
-    with so many different engineering roles and problem spaces. While my
-    opinions might resonate with some devs, it probably won't with others. To
-    paint a picture: I work on apps, mostly on backends. While I'm not too
-    involved with deep, 'purely technical' under the hood problems (eg.
-    optimizing the FPS on a videoplayer), I do solve issues like parameter
-    sniffing performance problems in SQL, wiring up authentication between
-    services, attending event storming sessions and so on.
   </p>
 
   <hr class="pt-12 mt-12 opacity-30" />
@@ -42,7 +37,7 @@ const technicalNuggets = await getCollection("technicalExperienceNugget");
 
   <div class="pt-6 flex flex-col gap-6">
     {
-      philosophicalNuggets.map((nugget, index) => {
+      sortedPhilosophicalNuggets.map((nugget, index) => {
         return <ExperienceNugget nugget={nugget} number={index + 1} />;
       })
     }
@@ -53,7 +48,7 @@ const technicalNuggets = await getCollection("technicalExperienceNugget");
   <h3 class="-mt-12">Technical nuggets</h3>
   <div class="pt-6 flex flex-col gap-6">
     {
-      technicalNuggets.map((nugget, index) => {
+      sortedTechnicalNuggets.map((nugget, index) => {
         return <ExperienceNugget nugget={nugget} number={index + 1} />;
       })
     }

@@ -2,4 +2,4 @@
 title: "Modular monoliths > microservices"
 ---
 
-Microservices are often an overkill. A well architected monolith is an excellent compromise.
+Microservices are more often than not an overkill. A modular monolith with well separated bounded contexts is an excellent compromise between microservices and a monolith.

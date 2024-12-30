@@ -44,15 +44,17 @@ const { title, pubDate, updatedDate, heroImage } = Astro.props;
             <section class="-mt-4 pb-6">
               <FormattedDate date={pubDate} />
               {
-                pubDate && (
+                updatedDate && (
                   <span class="text-accent">
-                    - last updated on <FormattedDate date={pubDate} />
+                    - last updated on <FormattedDate date={updatedDate} />
                   </span>
                 )
               }
             </section>
           </div>
-          <slot />
+          <div class="prose">
+            <slot />
+          </div>
         </article>
       </section>
     </main>
