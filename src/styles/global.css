@@ -66,6 +66,15 @@ b {
 .prose p {
   margin-bottom: 2em;
 }
+
+.prose a {
+  color: #10b981;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
 textarea {
   width: 100%;
   font-size: 16px;
