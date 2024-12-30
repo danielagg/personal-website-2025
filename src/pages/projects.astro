@@ -1,7 +1,23 @@
 ---
 import Layout from "../layouts/Main.astro";
+import { getCollection } from "astro:content";
+import Project from "../components/Project.astro";
+
+const projects = await getCollection("project");
 ---
 
 <Layout>
-  <h1>Coming soon!</h1>
+  <h1>Public projects</h1>
+  <p class="text-accent">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo repudiandae
+    quo obcaecati beatae consectetur repellendus minima itaque unde totam vel.
+  </p>
+
+  <div class="flex flex-col divide-y divide-accent/20">
+    {
+      projects.map((project) => {
+        return <Project project={project} />;
+      })
+    }
+  </div>
 </Layout>
