@@ -8,7 +8,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, pubDate, updatedDate } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,13 +25,6 @@ const { title, pubDate, updatedDate, heroImage } = Astro.props;
       <Sidebar />
       <section class="w-full lg:w-2/3 p-4">
         <article>
-          <div>
-            {
-              heroImage && (
-                <img width={1020} height={510} src={heroImage} alt="" />
-              )
-            }
-          </div>
           <div>
             <div class="py-6">
               <a

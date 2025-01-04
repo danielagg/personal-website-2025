@@ -22,14 +22,6 @@ const sortedPosts = posts
         sortedPosts.map((post) => (
           <li>
             <a href={`/blog/${post.id}/`}>
-              {post.data.heroImage && (
-                <img
-                  width={720}
-                  height={360}
-                  src={post.data.heroImage}
-                  alt=""
-                />
-              )}
               <h2 class="text-2xl font-bold m-0">{post.data.title}</h2>
               <p class="text-base text-accent">
                 <FormattedDate date={post.data.pubDate} />
