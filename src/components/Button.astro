@@ -8,7 +8,7 @@ const { label, onClick } = Astro.props;
 ---
 
 <button
-  class="w-full border-primary/30 border bg-primary/10 hover:bg-primary/30 text-primary px-4 py-2 rounded-full text-base"
+  class="border-primary/30 bg-primary/10 hover:bg-primary/30 text-primary w-full rounded-full border px-4 py-2 text-base"
   onclick={`(${onClick.toString()})()`}
 >
   {label}

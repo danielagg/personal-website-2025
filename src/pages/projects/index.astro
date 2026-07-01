@@ -6,19 +6,21 @@ import { sortByFilePath } from "../../utils/sortByFilePath";
 
 const projects = await getCollection("project");
 
-const sortedProjects = projects.sort((a, b) =>
-  sortByFilePath(a.filePath!, b.filePath!)
-);
+const sortedProjects = projects
+  .filter((p) => p.filePath)
+  .sort((a, b) => sortByFilePath(a.filePath!, b.filePath!));
 ---
 
 <Layout>
-  <h1>Public Projects</h1>
-  <p class="text-accent">
-    While most of my professional work is not open source, these are some of my
-    side/hobby/personal projects.
-  </p>
+  <section class="animate-in">
+    <h1>Public Projects</h1>
+    <p class="text-accent">
+      While most of my professional work is not open source, these are some of my
+      side/hobby/personal projects.
+    </p>
+  </section>
 
-  <div class="flex flex-col divide-y divide-accent/20">
+  <div class="animate-in divide-accent/20 flex flex-col divide-y">
     {
       sortedProjects.map((project) => {
         return <Project project={project} />;

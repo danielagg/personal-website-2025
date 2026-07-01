@@ -120,11 +120,11 @@ Some slides had to be retracted, due to containing proprietary code snippets fro
 ![presentation slide](/presentations/fp/GLEAM-35.jpg)
 <br />
 
-**Retracted slide, showing a C# example levaraging the ErrorOr library to implement a method in an aggregate root.**
+**Retracted slide, showing a C# example leveraging the ErrorOr library to implement a method in an aggregate root.**
 
 <br />
 
-**Retracted slide, showing a C# example levaraging the ErrorOr and MediatR library to implement a command handler.**
+**Retracted slide, showing a C# example leveraging the ErrorOr and MediatR library to implement a command handler.**
 
 <br />
 

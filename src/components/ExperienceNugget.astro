@@ -5,8 +5,7 @@ import { render } from "astro:content";
 interface Props {
   number: number;
   nugget:
-    | CollectionEntry<"technicalExperienceNugget">
-    | CollectionEntry<"philosophicalExperienceNugget">;
+    CollectionEntry<"technicalExperienceNugget"> | CollectionEntry<"philosophicalExperienceNugget">;
 }
 
 const { number, nugget } = Astro.props;
@@ -14,8 +13,8 @@ const { Content } = await render(nugget);
 ---
 
 <section>
-  <h2 class="text-2xl font-bold m-0">{number}. {nugget.data.title}</h2>
-  <div class="text-base text-accent prose">
+  <h2 class="m-0 text-2xl font-bold">{number}. {nugget.data.title}</h2>
+  <div class="text-accent prose text-base">
     <Content />
   </div>
 </section>

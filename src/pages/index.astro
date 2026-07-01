@@ -1,42 +1,36 @@
 ---
 import Layout from "../layouts/Main.astro";
-import Button from "../components/Button.astro";
 import Experience from "../components/Experience.astro";
 ---
 
 <Layout>
-  <section>
+  <section class="animate-in">
     <h1>Hi there!</h1>
     <p>
-      I'm Daniel, a Senior Full Stack Developer based in Amsterdam, proudly
-      working at <a
-        class="cursor-pointer text-primary hover:underline"
+      I'm Daniel, a Senior Full Stack Developer based in Amsterdam, proudly working at <a
+        class="text-primary cursor-pointer hover:underline"
         href="https://ipractice.com/"
         target="_blank">iPractice</a
       >, a company focused on making mental health care accessible to everyone.
     </p>
-    <p class="pt-8 text-base text-accent">
-      I specialize in architecting, designing and developing scalable software
-      solutions on Azure and AWS.
+    <p class="text-accent pt-8 text-base">
+      I specialize in architecting, designing and developing scalable software solutions on Azure
+      and AWS.
     </p>
-    <p class="pt-8 text-base text-accent">
-      On the backend, I'm experienced in .NET, Go, Python and SQL. On the front,
-      I'm experienced in TypeScript & JavaScript (React, Astro, Solid, HTMX).
-      Most recently, I've been working with React Native and Expo.
+    <p class="text-accent pt-8 text-base">
+      On the backend, I'm experienced in .NET, Go, Python and SQL. On the front, I'm experienced in
+      TypeScript & JavaScript (React, Astro, Solid, HTMX). Most recently, I've been working with
+      React Native and Expo.
     </p>
   </section>
 
-  <hr class="my-6 lg:my-20 opacity-30" />
+  <hr class="my-6 opacity-30 lg:my-20" />
 
   <section
-    class="text-base text-accent flex flex-col lg:grid auto-cols-auto grid-flow-col gap-12"
+    class="text-accent animate-in flex auto-cols-auto grid-flow-col flex-col gap-12 text-base lg:grid"
   >
-    <div class="flex flex-col items-center w-full">
-      <img
-        src="profile.png"
-        class="w-[150px] w-[9vw] rounded-full"
-        alt="Profile picture of Daniel Agg"
-      />
+    <div class="flex w-full flex-col items-center">
+      <img src="profile.png" class="w-[9vw] w-[150px] rounded-full" alt="Daniel Agg" />
       <!-- <div class="mt-6 w-fit lg:w-full">
         <Button
           label="Download my CV"
@@ -46,43 +40,51 @@ import Experience from "../components/Experience.astro";
     </div>
     <section class="flex flex-col gap-4">
       <p>
-        I advocate for modular monoliths with vertical slicing, Domain Driven
-        Design, true CI/CD with Trunk Based Development and feature flags,
-        fitness functions, procedural code and compartmentalizing volatile parts
-        of our applications.
+        I advocate for modular monoliths with vertical slicing, Domain Driven Design, true CI/CD
+        with Trunk Based Development and feature flags, fitness functions, procedural code and
+        compartmentalizing volatile parts of our applications.
       </p>
       <p>
-        I'm passionate about researching adaptable software architectures,
-        enabling applications to gracefully evolve over time: I came to realize
-        the value of an adaptable architecture, which can facilitate the
-        ever-changing landscape of business needs and keep the tempo of
+        I'm passionate about researching adaptable software architectures, enabling applications to
+        gracefully evolve over time: I came to realize the value of an adaptable architecture, which
+        can facilitate the ever-changing landscape of business needs and keep the tempo of
         development rapid, without accumulating technical debt.
       </p>
       <p>
-        While I love geeking out over architectures, I like to think that I'm
-        also pragmatic, always keeping in mind that my goal as a software
-        developer is to deliver a working product, not the blueprint of it.
+        While I love geeking out over architectures, I like to think that I'm also pragmatic, always
+        keeping in mind that my goal as a software developer is to deliver a working product, not
+        the blueprint of it.
       </p>
     </section>
   </section>
 
-  <hr class="my-6 lg:mt-24 lg:mb-12 opacity-30" />
+  <hr class="my-6 opacity-30 lg:mt-24 lg:mb-12" />
 
-  <section>
+  <section class="animate-in">
     <h3 class="pb-6">Experience</h3>
 
-    <div class="flex flex-col">
-      <Experience
-        title="Senior Full Stack Developer"
-        employer="iPractice"
-        employerUrl="https://ipractice.com"
-        location="Amsterdam, Netherlands"
-        startDate={new Date("2023-12-01")}
-        isCurrent
-        description="I'm working on internal applications for psychologists, allowing them to manage their clientele, incoming referrals, invoices and appointment scheduling."
-      />
+    <div class="relative space-y-6">
+      <div class="bg-primary/20 absolute top-6 bottom-6 left-[7px] w-px"></div>
 
-      <div class="pt-6 space-y-4">
+      <div class="relative pl-8">
+        <span
+          class="bg-primary absolute top-2 left-0 h-[14px] w-[14px] rounded-full shadow-[0_0_0_4px_rgba(16,185,129,0.15)]"
+          style="animation: pulse-dot 2s ease-in-out infinite;"></span>
+        <Experience
+          title="Senior Full Stack Developer"
+          employer="iPractice"
+          employerUrl="https://ipractice.com"
+          location="Amsterdam, Netherlands"
+          startDate={new Date("2023-12-01")}
+          isCurrent
+          description="I'm working on internal applications for psychologists, allowing them to manage their clientele, incoming referrals, invoices and appointment scheduling."
+        />
+      </div>
+
+      <div class="relative pl-8">
+        <span
+          class="border-primary/40 bg-background absolute top-2 left-[3px] h-[8px] w-[8px] rounded-full border"
+        ></span>
         <Experience
           title="Senior Full Stack Developer"
           employer="Apiumhub"
@@ -91,7 +93,12 @@ import Experience from "../components/Experience.astro";
           startDate={new Date("2021-04-01")}
           endDate={new Date("2023-11-01")}
         />
+      </div>
 
+      <div class="relative pl-8">
+        <span
+          class="border-primary/40 bg-background absolute top-2 left-[3px] h-[8px] w-[8px] rounded-full border"
+        ></span>
         <Experience
           title="Full Stack Developer"
           employer="Glownexus"
@@ -100,7 +107,12 @@ import Experience from "../components/Experience.astro";
           startDate={new Date("2018-09-01")}
           endDate={new Date("2021-04-01")}
         />
+      </div>
 
+      <div class="relative pl-8">
+        <span
+          class="border-primary/40 bg-background absolute top-2 left-[3px] h-[8px] w-[8px] rounded-full border"
+        ></span>
         <Experience
           title="Junior/Medior .NET Developer"
           employer="Atos Consulting"

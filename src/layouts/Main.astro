@@ -9,18 +9,37 @@ import Sidebar from "../components/Sidebar.astro";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <script is:inline>
+      document.documentElement.classList.add("js");
+    </script>
   </head>
-  <body
-    class="bg-background text-foreground selection:bg-primary selection:text-background"
-  >
-    <main
-      class="block lg:flex w-full lg:w-3/4 py-6 lg:pt-32 lg:pb-20 px-6 lg:px-12"
-    >
+  <body class="bg-background text-foreground selection:bg-primary selection:text-background">
+    <main class="block w-full px-6 py-6 lg:flex lg:w-3/4 lg:px-12 lg:pt-32 lg:pb-20">
       <Sidebar />
-      <section class="w-full lg:w-2/3 p-4">
+      <section class="w-full p-4 lg:w-2/3">
         <slot />
       </section>
     </main>
     <Footer />
+
+    <script>
+      (function () {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+
+        document.querySelectorAll(".animate-in").forEach(function (el) {
+          observer.observe(el);
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -11,7 +11,7 @@ const { Content } = await render(project);
 ---
 
 <section class="py-12">
-  <h2 class="text-2xl font-bold m-0">{project.data.title}</h2>
+  <h2 class="m-0 text-2xl font-bold">{project.data.title}</h2>
 
   <section class="flex items-center space-x-8 pt-1 pb-4">
     {
@@ -59,7 +59,7 @@ const { Content } = await render(project);
     </a>
   </section>
 
-  <div class="text-base text-accent prose">
+  <div class="text-accent prose text-base">
     <Content />
   </div>
 </section>

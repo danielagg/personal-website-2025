@@ -16,21 +16,14 @@ const { title, pubDate, updatedDate } = Astro.props;
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body
-    class="bg-background text-foreground selection:bg-primary selection:text-background"
-  >
-    <main
-      class="block lg:flex w-full lg:w-3/4 py-6 lg:pt-32 lg:pb-20 px-6 lg:px-12"
-    >
+  <body class="bg-background text-foreground selection:bg-primary selection:text-background">
+    <main class="block w-full px-6 py-6 lg:flex lg:w-3/4 lg:px-12 lg:pt-32 lg:pb-20">
       <Sidebar />
-      <section class="w-full lg:w-2/3 p-4">
+      <section class="w-full p-4 lg:w-2/3">
         <article>
           <div>
             <div class="py-6">
-              <a
-                href="/blog"
-                class="text-primary hover:underline cursor-pointer">↩ Back</a
-              >
+              <a href="/blog" class="text-primary cursor-pointer hover:underline">↩ Back</a>
             </div>
 
             <h1 class="font-bold">{title}</h1>

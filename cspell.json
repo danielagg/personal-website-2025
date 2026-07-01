@@ -1,0 +1,43 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "apiumhub",
+    "astrojs",
+    "Atos",
+    "Coruña",
+    "dbaeumer",
+    "esbenp",
+    "FAANG",
+    "geeking",
+    "glownexus",
+    "grugbrain",
+    "Grug",
+    "HTMX",
+    "Inconsolata",
+    "MediatR",
+    "ipractice",
+    "mdx",
+    "medior",
+    "nuggets",
+    "Odersky",
+    "prettierrc",
+    "tailwindcss",
+    "tseslint",
+    "uidotdev",
+    "unifiedjs",
+    "vite",
+    "Wadler",
+    "Wlaschin",
+    "yappings"
+  ],
+  "ignorePaths": [
+    "dist/",
+    ".astro/",
+    "node_modules/",
+    "bun.lockb",
+    "public/fonts/",
+    "*.svg",
+    "src/content/blog/example.md"
+  ]
+}

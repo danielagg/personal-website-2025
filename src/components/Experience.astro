@@ -10,29 +10,19 @@ interface Props {
   isCurrent?: boolean;
 }
 
-const {
-  title,
-  description,
-  location,
-  employer,
-  employerUrl,
-  startDate,
-  endDate,
-  isCurrent,
-} = Astro.props;
+const { title, description, location, employer, employerUrl, startDate, endDate, isCurrent } =
+  Astro.props;
 ---
 
 <section>
-  <h3 class="text-2xl font-bold m-0">
+  <h3 class="m-0 text-2xl font-bold">
     {title}
     <span class="text-accent">@</span>
-    <a
-      class="text-primary cursor-pointer hover:underline"
-      href={employerUrl}
-      target="_blank">{employer}</a
+    <a class="text-primary cursor-pointer hover:underline" href={employerUrl} target="_blank"
+      >{employer}</a
     >
   </h3>
-  <p class="text-base text-accent">
+  <p class="text-accent text-base">
     {
       startDate.toLocaleDateString("en-US", {
         month: "short",
@@ -43,12 +33,12 @@ const {
     {
       isCurrent
         ? "Present"
-        : endDate!.toLocaleDateString("en-US", {
+        : (endDate?.toLocaleDateString("en-US", {
             month: "short",
             year: "numeric",
-          })
+          }) ?? "")
     } | {location}
   </p>
 
-  {description && <p class="text-base text-accent pt-3">{description}</p>}
+  {description && <p class="text-accent pt-3 text-base">{description}</p>}
 </section>
