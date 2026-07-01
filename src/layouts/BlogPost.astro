@@ -14,7 +14,7 @@ const { title, pubDate, updatedDate } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={`${title} | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
   </head>
   <body class="bg-background text-foreground selection:bg-primary selection:text-background">
     <main class="block w-full px-6 py-6 lg:flex lg:w-3/4 lg:px-12 lg:pt-32 lg:pb-20">

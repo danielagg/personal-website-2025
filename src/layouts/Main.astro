@@ -3,18 +3,33 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Sidebar from "../components/Sidebar.astro";
+
+interface Props {
+  title?: string;
+}
+
+const { title = SITE_TITLE } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={SITE_DESCRIPTION} />
     <script is:inline>
       document.documentElement.classList.add("js");
     </script>
   </head>
   <body class="bg-background text-foreground selection:bg-primary selection:text-background">
-    <main class="block w-full px-6 py-6 lg:flex lg:w-3/4 lg:px-12 lg:pt-32 lg:pb-20">
+    <a
+      href="#main-content"
+      class="focus:bg-primary focus:text-background sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:px-4 focus:py-2 focus:outline-none"
+    >
+      Skip to content
+    </a>
+    <main
+      id="main-content"
+      class="block w-full px-6 py-6 lg:flex lg:w-3/4 lg:px-12 lg:pt-32 lg:pb-20"
+    >
       <Sidebar />
       <section class="w-full p-4 lg:w-2/3">
         <slot />

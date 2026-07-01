@@ -17,9 +17,12 @@ const { title, description, location, employer, employerUrl, startDate, endDate,
 <section>
   <h3 class="m-0 text-2xl font-bold">
     {title}
-    <span class="text-accent">@</span>
-    <a class="text-primary cursor-pointer hover:underline" href={employerUrl} target="_blank"
-      >{employer}</a
+    <span class="text-accent"> @ </span>
+    <a
+      class="text-primary cursor-pointer hover:underline"
+      href={employerUrl}
+      target="_blank"
+      rel="noopener noreferrer">{employer}</a
     >
   </h3>
   <p class="text-accent text-base">

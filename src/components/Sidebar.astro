@@ -6,12 +6,12 @@ import SidebarLink from "./SidebarLink.astro";
   <h2 class="text-primary cursor-pointer font-bold hover:underline">
     <a href="/" class="inline-flex items-center gap-2">
       <span
-        class="bg-primary inline-block h-2 w-2 rounded-full"
+        class="bg-primary inline-block size-2 rounded-full"
         style="animation: pulse-dot 2s ease-in-out infinite;"></span>
       daniel agg
     </a>
   </h2>
-  <p class="text-foreground min-h-[2.5rem] text-2xl">
+  <p class="text-foreground min-h-10 text-2xl">
     <span id="tagline"></span><span id="cursor" class="typing-cursor"></span>
   </p>
   <p class="text-accent text-base">
@@ -19,7 +19,8 @@ import SidebarLink from "./SidebarLink.astro";
     <a
       class="text-primary cursor-pointer hover:underline"
       href="https://ipractice.com"
-      target="_blank">iPractice</a
+      target="_blank"
+      rel="noopener noreferrer">iPractice</a
     >
   </p>
 
@@ -62,7 +63,13 @@ import SidebarLink from "./SidebarLink.astro";
 
   <ul class="text-accent flex gap-4">
     <li>
-      <a href="https://github.com/danielagg" target="_blank" class="text-primary">
+      <a
+        href="https://github.com/danielagg"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        class="text-primary"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -80,7 +87,13 @@ import SidebarLink from "./SidebarLink.astro";
       </a>
     </li>
     <li>
-      <a href="https://x.com/a13dan" target="_blank" class="text-primary">
+      <a
+        href="https://x.com/a13dan"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="X (Twitter)"
+        class="text-primary"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -98,7 +111,13 @@ import SidebarLink from "./SidebarLink.astro";
       </a>
     </li>
     <li>
-      <a href="https://www.linkedin.com/in/danielagg/" target="_blank" class="text-primary">
+      <a
+        href="https://www.linkedin.com/in/danielagg/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        class="text-primary"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -116,7 +135,13 @@ import SidebarLink from "./SidebarLink.astro";
       </a>
     </li>
     <li class="ml-6">
-      <a href="https://soundcloud.com/a13dan" target="_blank" class="text-accent">
+      <a
+        href="https://soundcloud.com/a13dan"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="SoundCloud"
+        class="text-accent"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
