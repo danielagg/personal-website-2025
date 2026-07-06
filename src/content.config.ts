@@ -42,9 +42,20 @@ const technicalExperienceNugget = defineCollection({
   }),
 });
 
+const aiExperienceNugget = defineCollection({
+  loader: glob({
+    base: "./src/content/experience-nuggets/ai",
+    pattern: "**/*.{md,mdx}",
+  }),
+  schema: z.object({
+    title: z.string(),
+  }),
+});
+
 export const collections = {
   blog,
   project,
+  aiExperienceNugget,
   philosophicalExperienceNugget,
   technicalExperienceNugget,
 };

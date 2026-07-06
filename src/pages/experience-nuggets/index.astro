@@ -4,6 +4,11 @@ import Layout from "../../layouts/Main.astro";
 import { getCollection } from "astro:content";
 import { sortByFilePath } from "../../utils/sortByFilePath";
 
+const aiNuggets = await getCollection("aiExperienceNugget");
+const sortedAiNuggets = aiNuggets
+  .filter((n) => n.filePath)
+  .sort((a, b) => sortByFilePath(a.filePath!, b.filePath!));
+
 const philosophicalNuggets = await getCollection("philosophicalExperienceNugget");
 const sortedPhilosophicalNuggets = philosophicalNuggets
   .filter((n) => n.filePath)
@@ -35,7 +40,21 @@ const sortedTechnicalNuggets = technicalNuggets
   <hr class="mt-12 pt-12 opacity-30" />
 
   <section class="animate-in">
-    <h2 class="-mt-12">Philosophical nuggets</h2>
+    <h2 class="-mt-12">AI nuggets</h2>
+
+    <div class="flex flex-col gap-6 pt-6">
+      {
+        sortedAiNuggets.map((nugget, index) => {
+          return <ExperienceNugget nugget={nugget} number={index + 1} />;
+        })
+      }
+    </div>
+  </section>
+
+  <hr class="mt-12 pt-12 opacity-30" />
+
+  <section class="animate-in">
+    <h2 class="-mt-12">Philosophical nuggets <span class="text-sm font-normal opacity-60">(pre-AI)</span></h2>
 
     <div class="flex flex-col gap-6 pt-6">
       {
@@ -49,7 +68,7 @@ const sortedTechnicalNuggets = technicalNuggets
   <hr class="mt-12 pt-12 opacity-30" />
 
   <section class="animate-in">
-    <h2 class="-mt-12">Technical nuggets</h2>
+    <h2 class="-mt-12">Technical nuggets <span class="text-sm font-normal opacity-60">(pre-AI)</span></h2>
     <div class="flex flex-col gap-6 pt-6">
       {
         sortedTechnicalNuggets.map((nugget, index) => {
