@@ -21,10 +21,8 @@ const sortedProjects = projects
   </section>
 
   <div class="animate-in divide-accent/20 flex flex-col divide-y">
-    {
-      sortedProjects.map((project) => {
-        return <Project project={project} />;
-      })
-    }
+    {sortedProjects.map((project) => {
+      return <Project project={project} />;
+    })}
   </div>
 </Layout>

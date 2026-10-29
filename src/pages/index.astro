@@ -1,18 +1,24 @@
 ---
 import Layout from "../layouts/Main.astro";
 import Experience from "../components/Experience.astro";
+import { PROFESSIONAL_TITLE } from "../consts";
 ---
 
 <Layout>
   <section class="animate-in">
     <h1>Hi there!</h1>
     <p>
-      I'm Daniel, a Senior Full Stack Developer based in Amsterdam, working at <a
+      I'm Daniel, a Senior Full Stack Developer focused on production AI platforms and products,
+      based in Amsterdam and working at{" "}
+      <a
         class="text-primary cursor-pointer hover:underline"
         href="https://ipractice.com/"
         target="_blank"
-        rel="noopener noreferrer">iPractice</a
-      >, a company focused on making mental health care accessible to everyone.
+        rel="noopener noreferrer"
+      >
+        iPractice
+      </a>
+      , a company focused on making mental health care accessible to everyone.
     </p>
     <p class="text-accent pt-8 text-base">
       I specialize in architecting, designing and developing scalable software solutions on Azure
@@ -29,9 +35,7 @@ import Experience from "../components/Experience.astro";
 
   <hr class="my-6 opacity-30 lg:my-20" />
 
-  <section
-    class="text-accent animate-in flex auto-cols-auto grid-flow-col flex-col gap-12 text-base lg:grid"
-  >
+  <section class="text-accent animate-in flex auto-cols-auto grid-flow-col flex-col gap-12 text-base lg:grid">
     <div class="flex w-full flex-col items-center">
       <img src="profile.png" class="w-[9vw] w-[150px] rounded-full" alt="Daniel Agg" />
       <!-- <div class="mt-6 w-fit lg:w-full">
@@ -74,9 +78,10 @@ import Experience from "../components/Experience.astro";
       <div class="relative pl-8">
         <span
           class="bg-primary absolute top-2 left-0 size-3.5 rounded-full shadow-[0_0_0_4px_rgba(16,185,129,0.15)]"
-          style="animation: pulse-dot 2s ease-in-out infinite;"></span>
+          style="animation: pulse-dot 2s ease-in-out infinite;"
+        ></span>
         <Experience
-          title="Senior Full Stack Developer"
+          title={PROFESSIONAL_TITLE}
           employer="iPractice"
           employerUrl="https://ipractice.com"
           location="Amsterdam, Netherlands"
@@ -87,9 +92,7 @@ import Experience from "../components/Experience.astro";
       </div>
 
       <div class="relative pl-8">
-        <span
-          class="border-primary/40 bg-background absolute top-2 left-[3px] size-2 rounded-full border"
-        ></span>
+        <span class="border-primary/40 bg-background absolute top-2 left-[3px] size-2 rounded-full border"></span>
         <Experience
           title="Senior Full Stack Developer"
           employer="Apiumhub"
@@ -101,9 +104,7 @@ import Experience from "../components/Experience.astro";
       </div>
 
       <div class="relative pl-8">
-        <span
-          class="border-primary/40 bg-background absolute top-2 left-[3px] size-2 rounded-full border"
-        ></span>
+        <span class="border-primary/40 bg-background absolute top-2 left-[3px] size-2 rounded-full border"></span>
         <Experience
           title="Full Stack Developer"
           employer="Glownexus"
@@ -115,9 +116,7 @@ import Experience from "../components/Experience.astro";
       </div>
 
       <div class="relative pl-8">
-        <span
-          class="border-primary/40 bg-background absolute top-2 left-[3px] size-2 rounded-full border"
-        ></span>
+        <span class="border-primary/40 bg-background absolute top-2 left-[3px] size-2 rounded-full border"></span>
         <Experience
           title="Junior/Medior .NET Developer"
           employer="Atos Consulting"

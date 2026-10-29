@@ -19,18 +19,16 @@ const sortedPosts = posts
   </section>
 
   <ul class="animate-in flex flex-col gap-12 pt-12">
-    {
-      sortedPosts.map((post) => (
-        <li>
-          <a href={`/blog/${post.id}/`}>
-            <h2 class="m-0 text-2xl font-bold">{post.data.title}</h2>
-            <p class="text-accent text-base">
-              <FormattedDate date={post.data.pubDate} />
-            </p>
-            <p class="text-accent pt-2 text-base">{post.data.description}</p>
-          </a>
-        </li>
-      ))
-    }
+    {sortedPosts.map((post) => (
+      <li>
+        <a href={`/blog/${post.id}/`}>
+          <h2 class="m-0 text-2xl font-bold">{post.data.title}</h2>
+          <p class="text-accent text-base">
+            <FormattedDate date={post.data.pubDate} />
+          </p>
+          <p class="text-accent pt-2 text-base">{post.data.description}</p>
+        </a>
+      </li>
+    ))}
   </ul>
 </Layout>

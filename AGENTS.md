@@ -3,7 +3,7 @@
 ## Stack
 
 - **Runtime**: Bun (lockfile is `bun.lockb`, use `bun` not `npm`)
-- **Framework**: Astro 6.4 + TypeScript (strict mode)
+- **Framework**: Astro 7.4 + TypeScript (strict mode)
 - **Styling**: Tailwind CSS 4 (`@import "tailwindcss"` syntax, no `tailwind.config`)
 - **Content**: Astro content collections — blog, projects, philosophical/technical experience nuggets (md/mdx)
 

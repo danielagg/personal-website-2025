@@ -22,25 +22,24 @@ const { title, description, location, employer, employerUrl, startDate, endDate,
       class="text-primary cursor-pointer hover:underline"
       href={employerUrl}
       target="_blank"
-      rel="noopener noreferrer">{employer}</a
+      rel="noopener noreferrer"
     >
+      {employer}
+    </a>
   </h3>
   <p class="text-accent text-base">
-    {
-      startDate.toLocaleDateString("en-US", {
-        month: "short",
-        year: "numeric",
-      })
-    }
+    {startDate.toLocaleDateString("en-US", {
+      month: "short",
+      year: "numeric",
+    })}
     {" - "}
-    {
-      isCurrent
-        ? "Present"
-        : (endDate?.toLocaleDateString("en-US", {
-            month: "short",
-            year: "numeric",
-          }) ?? "")
-    } | {location}
+    {isCurrent
+      ? "Present"
+      : (endDate?.toLocaleDateString("en-US", {
+          month: "short",
+          year: "numeric",
+        }) ?? "")}{" "}
+    | {location}
   </p>
 
   {description && <p class="text-accent pt-3 text-base">{description}</p>}
